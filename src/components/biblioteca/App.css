@@ -8,11 +8,10 @@ main{
   display: flex;
   flex-direction: column;
   align-items: center;
+  height: 100%;
   /* border: 3px solid black; */
 }
 
 .pesquisa{
   padding: 40px 0;
-  height: 450px;
-  /* border: 1px solid red; */
 }

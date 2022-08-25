@@ -1,7 +1,7 @@
 import React from "react";
-
+import './livros.css'
 const ListaLivros = (props) => {
-  const {data} = props;
+  const data = props.value;
 
   return(
       <div className='lista'>

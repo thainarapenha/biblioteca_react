@@ -4,13 +4,13 @@ import Footer from '../footer/footer';
 import ListaLivros from '../livros/livros';
 import apiURL from '../conexaoAPI/conexaoAPI';
 import Input from '../input/input';
+import Filtro from '../filtroPesquisa/filtroPesquisa';
 import './App.css';
 
 function App(props) {
   const [sectionData, setSectionData] = useState(props.sectionData);
 
   console.log('opa', sectionData)
-  console.log('oooopa',  apiURL)
   
   const fetchData = async (value) => {
     const response = await apiURL.get(value)
@@ -25,10 +25,10 @@ function App(props) {
     <main>
       <Header/>
       <section className='pesquisa'>
-        <Input />
+        <Input/>
+        <Filtro list={ListaLivros.hits}/>
         <ListaLivros value={sectionData}/>
       </section>
-
       <Footer/>
     </main>
   );
