@@ -5,11 +5,12 @@ function Input(props){
     const [buscar, setBuscar] = useState('');
 
     const buscarEntrada = (e) => {
-    setBuscar(e.target.value);
+        setBuscar(e.target.value);
     }
 
     const enviarEntrada = (e) => {
-    e.preventDefault();
+        e.preventDefault();
+        props.info(buscar)
     }
 
     return(
@@ -19,4 +20,5 @@ function Input(props){
         </form>
     );
 }
+
 export default Input;

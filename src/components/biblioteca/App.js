@@ -9,8 +9,6 @@ import './App.css';
 
 function App(props) {
   const [sectionData, setSectionData] = useState(props.sectionData);
-
-  console.log('opa', sectionData)
   
   const fetchData = async (value) => {
     const response = await apiURL.get(value)
@@ -25,7 +23,7 @@ function App(props) {
     <main>
       <Header/>
       <section className='pesquisa'>
-        <Input/>
+        <Input info={fetchData}/>
         <Filtro list={ListaLivros.hits}/>
         <ListaLivros value={sectionData}/>
       </section>
